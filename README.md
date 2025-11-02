@@ -48,16 +48,22 @@ Edit src/main/resources/application.properties:
 # PostgreSQL DATABASE CONFIGURATION
 # ===============================
 spring.datasource.url=jdbc:postgresql://localhost:5432/task_management
+
 spring.datasource.username=postgres
+
 spring.datasource.password=postgres
+
 spring.datasource.driver-class-name=org.postgresql.Driver
 
 # ===============================
 # JPA / HIBERNATE CONFIG
 # ===============================
 spring.jpa.hibernate.ddl-auto=update
+
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
 spring.jpa.show-sql=true
+
 spring.jpa.properties.hibernate.format_sql=true
 
 # ===============================
@@ -66,6 +72,7 @@ spring.jpa.properties.hibernate.format_sql=true
 server.port=8080
 
 4 Run Application
+
 mvn spring-boot:run
 
 
@@ -77,7 +84,7 @@ http://localhost:8080
 
 You can connect to PostgreSQL using psql or pgAdmin and run:
 
-\c taskdb
+\c task_management
 \d
 
 
