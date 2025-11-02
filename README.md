@@ -34,28 +34,20 @@ Maven (build tool)
 
 🚀 Setup Instructions
 1️⃣ Clone Repository
-git clone https://github.com/your-username/task-management-api.git
-cd task-management-api
+git clone https://github.com/your-username/task_management.git
+cd task_management
 
 2️⃣ Build Project
 mvn clean install
 
-3️⃣ Set Up PostgreSQL Database
-
-Make sure PostgreSQL is installed and running locally or via Docker.
-
-You can start PostgreSQL easily using Docker:
-
-docker run --name taskdb -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=taskdb -p 5432:5432 -d postgres
-
-4️⃣ Configure Database Connection
+3️⃣ Configure Database Connection
 
 Edit src/main/resources/application.properties:
 
 # ===============================
 # PostgreSQL DATABASE CONFIGURATION
 # ===============================
-spring.datasource.url=jdbc:postgresql://localhost:5432/taskdb
+spring.datasource.url=jdbc:postgresql://localhost:5432/task_management
 spring.datasource.username=postgres
 spring.datasource.password=postgres
 spring.datasource.driver-class-name=org.postgresql.Driver
@@ -73,7 +65,7 @@ spring.jpa.properties.hibernate.format_sql=true
 # ===============================
 server.port=8080
 
-5️⃣ Run Application
+4 Run Application
 mvn spring-boot:run
 
 
@@ -81,7 +73,7 @@ By default, the app runs at:
 
 http://localhost:8080
 
-6️⃣ Verify Database Connection
+5 Verify Database Connection
 
 You can connect to PostgreSQL using psql or pgAdmin and run:
 
@@ -94,11 +86,17 @@ You should see a task table created automatically by Hibernate.
 🧠 API Endpoints
 Method	Endpoint	Description
 GET	/tasks	Retrieve all tasks
+
 GET	/tasks/{id}	Retrieve a specific task
+
 POST	/tasks	Create a new task
+
 PUT	/tasks/{id}	Update an existing task
+
 DELETE	/tasks/{id}	Delete a task
+
 PATCH	/tasks/{id}/complete	Mark a task as completed
+
 📬 Example Request & Response
 ➕ Create Task (POST /tasks)
 
